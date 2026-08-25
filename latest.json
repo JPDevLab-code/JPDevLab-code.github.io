@@ -1,6 +1,6 @@
 {
-  "version": "2.15.0",
-  "notes": "UltraPDF 2.15.0 — Fixed auto-update: internal Tauri updater works from Settings",
+  "version": "2.16.0",
+  "notes": "UltraPDF 2.16.0 — Test update flow",
   "pub_date": "2026-08-25T20:00:00Z",
   "platforms": {
     "windows-x86_64": {
