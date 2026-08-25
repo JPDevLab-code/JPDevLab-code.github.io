@@ -1,11 +1,11 @@
 {
-  "version": "2.14.2",
-  "notes": "UltraPDF 2.14.2 — B2 cloud, Sentry, multi-device avatar, mobile upload, auto-update",
-  "pub_date": "2026-08-25T15:30:00Z",
+  "version": "2.15.0",
+  "notes": "UltraPDF 2.15.0 — Improved update system, bug fixes",
+  "pub_date": "2026-08-25T18:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTRnZ2MHNzaTVrRStWL2VtcUhDZ1BrTkY3bGxXNSt2QnhJL1RnUk5TWm8wcDdmTDhpSFV6VSthYlZDUUJHRHV1YklUK0c3MmxHMWs0VCtJcG0yWjJjQlBhNlVGcGJIcVFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3Njg1NzQyCWZpbGU6VWx0cmFQREYtU2V0dXAtMi4xNC4yLmV4ZQpSWlE0d0h2Q1BQcER6VFI4Q3AwS1hITGw1UFIvV25tUUljbkpuYzNma0hQcHNqOUF3QSs3ZTIvcFhQQ3JwSzFPODFrVmhmNTI1UmNZRkhRcERTSjJEZz09Cg==",
-      "url": "https://github.com/jpvasquez02-tech/jpvasquez02-tech.github.io/releases/download/v2.14.2/UltraPDF-Setup-2.14.2.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTRnZ2MHNzaTVrRTJpdmNrZEJwZ1kyOThtR2lRTnJ3dHJNbHlkNjRHK3dZKzVnd2tRK0V3V09VSXJmTUdVbXZDUitrY25DWG1SMUlBNWU1alp6Z2doN0Y5NEVWdFFZTEFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3Njg4ODM5CWZpbGU6VWx0cmFQREYtU2V0dXAtMi4xNS4wLmV4ZQo1ZFRnNm9aOGJXK3NRbHFzSXNLSEpxM1c1SFFuU2p1UUR0VVJuVGNmQlhVazV4bk1Bb0F5Ulc2NVRqY0RyeEpaSkhJWTY4MlNBS1dRR21lTytpV2FBQT09Cg==",
+      "url": "https://github.com/jpvasquez02-tech/jpvasquez02-tech.github.io/releases/download/v2.15.0/UltraPDF-Setup-2.15.0.exe"
     }
   }
 }
