@@ -1,0 +1,11 @@
+{
+  "version": "2.14.2",
+  "notes": "UltraPDF 2.14.2 - Initial release: B2 cloud, Sentry, multi-device avatar, mobile upload",
+  "pub_date": "2026-08-25T12:00:00Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTRnZ2MHNzaTVrRTF4Q3RHSVRmTGF4VEpZSEVYZkZrOS9IejVYajQxZS9DM2pVNnpkY2FRVmhiLzQ3R3BmZVZjZnp4Um5XSEhJVnJZUGhjTGRaR2hpTkpxL3A3bXdpWHc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3Njc0NjAxCWZpbGU6VWx0cmFQREYtU2V0dXAtMi4xNC4yLmV4ZQpmc05tMmd5ZVJJN25KU0dteWlWYkh2N1VrWE5JdzZwVEVzLzRHL2JhT0c2UFEwNGIrOVRVVzdsRDZvR2tsa1M5R1RYU1p0NHJnTWFWdk1WOWpwd1BDUT09Cg==",
+      "url": "https://jpvasquez02-tech.github.io/downloads/UltraPDF-Setup-2.14.2.exe"
+    }
+  }
+}
