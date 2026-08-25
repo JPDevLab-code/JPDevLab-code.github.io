@@ -1,11 +1,11 @@
 {
-  "version": "2.16.0",
-  "notes": "UltraPDF 2.16.0 — Test update flow",
-  "pub_date": "2026-08-25T20:00:00Z",
+  "version": "2.16.1",
+  "notes": "UltraPDF 2.16.1 — 3-state update system: forced blocking modal, optional banner, auto headless",
+  "pub_date": "2026-08-25T22:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTRnZ2MHNzaTVrRTV1QWdZRnVXb3JGVGFxOHRKdlZEbi9FSGdzWDdNeE81dkhMRUhYaUNYeWVIUVhiMHc5YUd4NlJCeWpITUFSWDJyOFptRkxDRkZaUDdDQUcxWU5ycUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjkyNDA5CWZpbGU6VWx0cmFQREYtU2V0dXAtMi4xNS4wLmV4ZQpCM1ZhSkJxYk9vd1Jtb1lsdlJQdVdqT2xIdXRNSzFjTlVjQWdBNWhWRE5qTzFEcU45eDl3Z0NoR2c3RVlJSlg0bkxkeHZKREF4R1BTVDZIaDdZWk5Cdz09Cg==",
-      "url": "https://github.com/jpvasquez02-tech/jpvasquez02-tech.github.io/releases/download/v2.15.0/UltraPDF-Setup-2.15.0.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTRnZ2MHNzaTVrRTJmRUk3QkIwVTA5V0hUUGZmdHMxUG1XVHpDVDVKaXdHMW9DZlNXbHhuUVFsOWoyK0M4VjdDaWdLTzkzMk9FcTkvWlEvZEZOMXNPN3NCVnErVWNJV1FjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3Njk5MTg5CWZpbGU6VWx0cmFQREYuZXhlClZqd0czUHUwVENEUTRMcHZMOFRXM2ZSQ0RSZ3dBQWJTMFBycUpOMjRGK21VQTlxTnRrdnl6VENHQldNdFhuZHRyT2pNVlZKckM5blRRNDNYUEVnVkJnPT0K",
+      "url": "https://github.com/jpvasquez02-tech/jpvasquez02-tech.github.io/releases/download/v2.16.1/UltraPDF-Setup-2.16.1.exe"
     }
   }
 }
