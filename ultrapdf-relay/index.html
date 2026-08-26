@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>UltraPDF - Subir archivo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            max-width: 400px;
+            padding: 2rem;
+            width: 100%;
+        }
+        .logo {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #4f8cff, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            color: #888;
+            margin-bottom: 2rem;
+        }
+        .upload-area {
+            border: 2px dashed #333;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+            cursor: pointer;
+        }
+        .upload-area:hover, .upload-area.dragover {
+            border-color: #4f8cff;
+        }
+        .upload-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, #4f8cff, #a855f7);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.2s;
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-secondary {
+            background: #222;
+            margin-top: 0.75rem;
+        }
+        .progress {
+            display: none;
+            margin-top: 1.5rem;
+        }
+        .progress-bar {
+            height: 6px;
+            background: #222;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4f8cff, #a855f7);
+            width: 0%;
+            transition: width 0.3s;
+        }
+        .success {
+            display: none;
+            color: #22c55e;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+        }
+        .error {
+            display: none;
+            color: #ef4444;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        #fileInput, #cameraInput { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg class="logo" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+            <rect width="128" height="128" rx="24" fill="#1a1a2e"/>
+            <path d="M32 40h64v8H32zM32 56h64v8H32zM32 72h48v8H32z" fill="#4f8cff"/>
+            <path d="M80 68l20 20-20 20" fill="none" stroke="#a855f7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h1>UltraPDF</h1>
+        <p class="subtitle" id="status">Preparado para subir</p>
+
+        <div class="upload-area" id="dropZone">
+            <div class="upload-icon">+</div>
+            <p>Toca para seleccionar archivos</p>
+            <p style="color: #666; font-size: 0.85rem; margin-top: 0.5rem;">Fotos, documentos, PDFs</p>
+        </div>
+
+        <input type="file" id="fileInput" multiple accept="image/*,.pdf,.doc,.docx">
+        <input type="file" id="cameraInput" accept="image/*" capture="environment">
+
+        <button class="btn" id="selectBtn">Seleccionar archivos</button>
+        <button class="btn btn-secondary" id="cameraBtn">Tomar foto</button>
+
+        <div class="progress" id="progress">
+            <p id="progressText">Subiendo...</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div class="success" id="success">
+            Archivo subido correctamente
+        </div>
+
+        <div class="error" id="error"></div>
+    </div>
+
+    <script>
+        const SUPABASE_URL = 'https://llzemgxuskdhiffnsvdc.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable_S1veirlDARE9flheSmda8Q_diDnH3tZ';
+
+        const params = new URLSearchParams(window.location.search);
+        const sessionId = params.get('session');
+        const isRelay = params.get('mode') === 'relay';
+
+        if (!sessionId || !isRelay) {
+            document.getElementById('status').textContent = 'URL inválida';
+            document.getElementById('selectBtn').disabled = true;
+            document.getElementById('cameraBtn').disabled = true;
+            throw new Error('Invalid URL');
+        }
+
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const cameraInput = document.getElementById('cameraInput');
+        const selectBtn = document.getElementById('selectBtn');
+        const cameraBtn = document.getElementById('cameraBtn');
+        const progress = document.getElementById('progress');
+        const progressFill = document.getElementById('progressFill');
+        const progressText = document.getElementById('progressText');
+        const success = document.getElementById('success');
+        const error = document.getElementById('error');
+
+        selectBtn.addEventListener('click', () => fileInput.click());
+        cameraBtn.addEventListener('click', () => cameraInput.click());
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+        dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            handleFiles(e.dataTransfer.files);
+        });
+
+        fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
+        cameraInput.addEventListener('change', (e) => handleFiles(e.target.files));
+
+        function getExtension(file) {
+            const map = {
+                'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp',
+                'image/heic': 'heic', 'image/heif': 'heif'
+            };
+            if (map[file.type]) return map[file.type];
+            const m = /\.([A-Za-z0-9]{1,6})$/.exec(file.name || '');
+            return m ? m[1].toLowerCase() : 'bin';
+        }
+
+        async function handleFiles(files) {
+            if (!files || files.length === 0) return;
+
+            selectBtn.disabled = true;
+            cameraBtn.disabled = true;
+            progress.style.display = 'block';
+            success.style.display = 'none';
+            error.style.display = 'none';
+
+            try {
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const ext = getExtension(file);
+                    const path = `${sessionId}/${Date.now()}-${i}.${ext}`;
+
+                    progressText.textContent = `Subiendo ${i + 1} de ${files.length}...`;
+                    progressFill.style.width = `${((i + 1) / files.length) * 100}%`;
+
+                    const res = await fetch(`${SUPABASE_URL}/storage/v1/object/mobile-uploads/${path}`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${SUPABASE_KEY}`,
+                            'apikey': SUPABASE_KEY,
+                            'Content-Type': file.type || 'application/octet-stream',
+                            'x-upsert': 'true'
+                        },
+                        body: file
+                    });
+
+                    if (!res.ok) throw new Error(`Upload failed: ${res.status}`);
+                }
+
+                success.style.display = 'block';
+                document.getElementById('status').textContent = 'Subido correctamente';
+
+                setTimeout(() => window.close(), 1500);
+            } catch (e) {
+                error.textContent = `Error: ${e.message}`;
+                error.style.display = 'block';
+                selectBtn.disabled = false;
+                cameraBtn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
