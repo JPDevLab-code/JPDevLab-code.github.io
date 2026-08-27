@@ -1,11 +1,11 @@
 {
-  "version": "2.17.0",
-  "notes": "UltraPDF v2.17.0 - Bug fixes and improvements",
-  "pub_date": "2026-08-26T00:00:00Z",
+  "version": "2.17.1",
+  "notes": "Fixes: Spanish language, OAuth coming soon buttons, Supabase branding, relay page logo",
+  "pub_date": "2026-08-27T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTRnZ2MHNzaTVrRTlvZWFmNE4wdmZTOUx6Vnp1MmxZQ0dDMUgrOXJxSjZuYU1JNXYzVE1XOHpwMkFsRkFrTlorSko5NkorNUNsVGtMYkkxbWxQT3lQeDhWdEIzREVBM2cwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3Nzc4NTE2CWZpbGU6VWx0cmFQREZfMi4xNy4wX3g2NF9lbi1VUy5tc2kKZU10MTI1RXduNHRacEJCMVFHYi9MSUxKckNoK1JjUEJIRy8rVXRsTTM0cER4eXdVUnliaGtOUFBDY3N5VnFJNWtIS1NvNUdLclpRaXBNckV6OUtRRFE9PQo=",
-      "url": "https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases/download/v2.17.0/UltraPDF_2.17.0_x64_en-US.msi"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTRnZ2MHNzaTVrRXpSc2d4WkVocERXaVZqbjlDZ2EyOHpEOVNyaTl1NVVET0ExRjBsTTlVZkE3MGFoUDlVVkd1NDZUWTFybzFkdkFkWmluTGJVaHZhVlUyUFEvN3JHWmdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3ODM4OTgyCWZpbGU6VWx0cmFQREZfMi4xNy4xX3g2NF9lbi1VUy5tc2kKdjdHcndaU1ZUQS9mWVQ4U25hL2ZkdFpFdmhhRkNYTG05aGxOTGpiY1RzUDR2MWNIbVZOU3cxQkswREFWOHdXWk5sWTI2VlIzb0VaalZUN2p0TmN1RGc9PQo=",
+      "url": "https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases/download/v2.17.1/UltraPDF_2.17.1_x64_en-US.msi"
     }
   }
 }
