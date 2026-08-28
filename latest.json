@@ -1,11 +1,11 @@
 {
-  "version": "2.17.1",
-  "notes": "Fixes: Spanish language, OAuth coming soon buttons, Supabase branding, relay page logo",
-  "pub_date": "2026-08-27T00:00:00Z",
+  "version": "2.17.2",
+  "notes": "Removed magic link, centered signup, Supabase password reset page, People module Supabase integration",
+  "pub_date": "2026-08-28T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTRnZ2MHNzaTVrRXpSc2d4WkVocERXaVZqbjlDZ2EyOHpEOVNyaTl1NVVET0ExRjBsTTlVZkE3MGFoUDlVVkd1NDZUWTFybzFkdkFkWmluTGJVaHZhVlUyUFEvN3JHWmdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3ODM4OTgyCWZpbGU6VWx0cmFQREZfMi4xNy4xX3g2NF9lbi1VUy5tc2kKdjdHcndaU1ZUQS9mWVQ4U25hL2ZkdFpFdmhhRkNYTG05aGxOTGpiY1RzUDR2MWNIbVZOU3cxQkswREFWOHdXWk5sWTI2VlIzb0VaalZUN2p0TmN1RGc9PQo=",
-      "url": "https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases/download/v2.17.1/UltraPDF_2.17.1_x64_en-US.msi"
+      "signature": "",
+      "url": "https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases/download/v2.17.2/UltraPDF-Setup-2.17.2.exe"
     }
   }
 }
