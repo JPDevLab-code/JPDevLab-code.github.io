@@ -1,11 +1,11 @@
 {
   "version": "2.17.2",
-  "notes": "Removed magic link, centered signup, Supabase password reset page, People module Supabase integration",
-  "pub_date": "2026-08-28T00:00:00Z",
+  "notes": "UltraPDF v2.17.2 - Rebranding completo, B2 cloud storage, Teams, MCP experimental",
+  "pub_date": "2026-08-31T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "",
-      "url": "https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases/download/v2.17.2/UltraPDF-Setup-2.17.2.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTRnZ2MHNzaTVrRXhrZ2gzUi9tL3JuMDFEdDJidm5jL1BCNWVVaEFVdCs1dll4Q3Y4ZHpidi9NZ1VmOWtXeDgvMU1sY290YkdaSGdwOTl3eVp4VExFc2c3NlhUSUJ5R3dFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MTc5OTAyCWZpbGU6VWx0cmFQREYuZXhlCjlMYW5ydnRJVEVqZFp0eVYrSEhJdWxqV0Z1djNRQktEVkNsbE5obFNqdmwyUVJTZ2NhcnBkTWg3bmtUS0hXNnFCWE5oYThJTW0waEJRaTJPT1NqVEF3PT0K",
+      "url": "https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases/download/v2.17.2/UltraPDF.exe"
     }
   }
 }
