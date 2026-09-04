@@ -1,11 +1,11 @@
 {
-  "version": "2.18.0",
-  "notes": "UltraPDF v2.18.0 - Configuración de dependencias, indicadores en toolbar, verificación de email mejorada",
-  "pub_date": "2026-09-02T00:00:00Z",
+  "version": "2.18.1",
+  "notes": "UltraPDF v2.18.1 - Botones de descarga manual, diálogo de actualización habilitado",
+  "pub_date": "2026-09-04T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTRnZ2MHNzaTVrRS9ROTlRM3Y1RExNb3EwRnZiSDByb01VOHh1MmJLVzUyQVFabWNBRUNWcmNTSUU4Qk1pR0F2SkhzQkpXeEVNc244U1paWFFvNXZ0VTJmbmhGZ3grT2drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MTg2NDgxCWZpbGU6VWx0cmFQREYuZXhlClUyMkpWUVR4V1dzdDFzM2ZoTzlNekh5Wi9QenFabWtEL3RtY2h5SGgrZ2JjZzZXb0RHWVpuVVVkK1FyRmdtNmhvNElCRDl1cnVIamxlcm45dWRPcEFnPT0K",
-      "url": "https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases/download/v2.18.0/UltraPDF.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTRnZ2MHNzaTVrRStQdGdrVXNVNTRPVVlydlJ0aHMvblkrZytFQk15ZmRWazZ1NURnaFAzVzdZUCt2Vm9sUFZSU3MycloyVm95S0JlZjQwbk0yRm9Bb1VNS1NiMEtMTkF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4NTQxMzkwCWZpbGU6VWx0cmFQREYuZXhlCmJrN1JVd0x4MjV5Rm9FanNWSTIxZUZrNkxoN1k5dS9ObEJYM2E3U2kvQSt2U1NOV2RwUk04VTg3ekswRDRjMGtwTE1PR3VlQVFoTGZnMGt1UWU0bkJnPT0K",
+      "url": "https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases/download/v2.18.1/UltraPDF.exe"
     }
   }
 }
