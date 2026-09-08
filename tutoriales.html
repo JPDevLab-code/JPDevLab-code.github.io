@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalación de Dependencias — UltraPDF</title>
+    <meta name="description" content="Video tutorial: paso a paso para instalar todas las dependencias de UltraPDF en Windows con Chocolatey y Python.">
+    <link rel="icon" href="assets/images/logos/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .tutorial-section {
+            padding: calc(var(--nav-height) + 40px) 0 80px;
+        }
+        .tutorial-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 48px;
+        }
+        .tutorial-header .eyebrow {
+            margin-bottom: 12px;
+        }
+        .tutorial-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+        .tutorial-header p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto 64px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--bg-surface);
+        }
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+        .steps-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .step-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+        .step-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .step-num {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 10px;
+            background: var(--accent);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .step-card-header h2 {
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+        .step-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .step-card p strong {
+            color: var(--text-primary);
+        }
+        .code-block {
+            position: relative;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-bottom: 16px;
+            overflow-x: auto;
+        }
+        .code-block code {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+            white-space: pre;
+        }
+        .code-block .comment {
+            color: var(--text-muted);
+        }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 4px 10px;
+            font-size: 0.7rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+        .copy-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .copy-btn.copied {
+            border-color: var(--accent-secondary);
+            color: var(--accent-secondary);
+        }
+        .tool-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px;
+        }
+        .tool-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        .tool-list li:last-child {
+            border-bottom: none;
+        }
+        .tool-list .check {
+            color: var(--accent-secondary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .tool-list strong {
+            color: var(--text-primary);
+        }
+        .tip-box {
+            background: var(--accent-light);
+            border: 1px solid var(--accent);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-top: 12px;
+        }
+        .tip-box p {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+        .tip-box strong {
+            color: var(--accent);
+        }
+        @media (max-width: 640px) {
+            .tutorial-header h1 { font-size: 1.6rem; }
+            .step-card { padding: 20px; }
+            .step-card-header { gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/images/logos/ultrapdf-icon-light.svg" alt="UltraPDF" class="nav-logo-img" id="nav-logo-img">
+                <span class="nav-brand">UltraPDF</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#features">Herramientas</a>
+                <a href="index.html#platforms">Plataformas</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="tutorial-section">
+        <div class="container">
+            <div class="tutorial-header">
+                <div class="eyebrow mono">// VIDEO TUTORIAL</div>
+                <h1>Instalación de Dependencias</h1>
+                <p>Configura todas las herramientas necesarias para que UltraPDF funcione al 100%. Sigue el video o usa los pasos de abajo para copiar y pegar cada comando.</p>
+            </div>
+
+            <div class="video-container">
+                <video controls preload="metadata" poster="assets/images/screenshots/Instalacion Dependencias - frame at 0m1s.jpg">
+                    <source src="assets/video/Instalacion Dependencias (SD).mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+
+            <div class="steps-container">
+                <!-- PASO 1 -->
+                <div class="step-card">
+                    <div class="step-card-header">
+                        <div class="step-num">1</div>
+                        <h2>Chocolatey + Python + PATH</h2>
+                    </div>
+                    <p><strong>Chocolatey</strong> es el gestor de paquetes para Windows. Piensa en él como <code>apt</code> en Linux o <code>brew</code> en macOS. Sin él, tendrías que buscar, descargar e instalar cada herramienta manualmente. Chocolatey automatiza todo desde la terminal.</p>
+                    <p><strong>Python 3</strong> es necesario para herramientas como OCRmyPDF, WeasyPrint y OpenCV que UltraPDF usa internamente para OCR avanzado, conversiones HTML→PDF y procesamiento de imágenes.</p>
+                    <p>Abre <strong>PowerShell como Administrador</strong> y pega este bloque completo:</p>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+<code><span class="comment"># 1. Instalar Chocolatey</span>
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+<span class="comment"># 2. Instalar Python 3</span>
+choco install python3 -y
+
+<span class="comment"># 3. Configurar PATH de usuario para Python</span>
+$pythonDir = "$env:LOCALAPPDATA\Programs\Python\Python312"
+$pythonScripts = "$env:LOCALAPPDATA\Programs\Python\Python312\Scripts"
+$currentPath = [Environment]::GetEnvironmentVariable("PATH", "User")
+
+if ($currentPath -notlike "*$pythonDir*") {
+    [Environment]::SetEnvironmentVariable("PATH", "$currentPath;$pythonDir;$pythonScripts", "User")
+    $env:PATH += ";$pythonDir;$pythonScripts"
+}
+
+Write-Host "Paso 1 completado" -ForegroundColor Green</code>
+                    </div>
+                    <div class="tip-box">
+                        <p><strong>Tip:</strong> Si ya tienes Chocolatey o Python instalados, puedes saltar esos sub-pasos. Asegúrate de que Python esté en el PATH.</p>
+                    </div>
+                </div>
+
+                <!-- PASO 2 -->
+                <div class="step-card">
+                    <div class="step-card-header">
+                        <div class="step-num">2</div>
+                        <h2>Herramientas del Sistema</h2>
+                    </div>
+                    <p>Instala todas las herramientas nativas de una sola vez con Chocolatey. Cada una agrega funcionalidades específicas a UltraPDF:</p>
+                    <ul class="tool-list">
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Ghostscript</strong> — Reparación, compresión avanzada, recorte y PDF/A</span></li>
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>qpdf</strong> — Reparación y compresión rápida</span></li>
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Tesseract OCR</strong> — Reconocimiento óptico de caracteres</span></li>
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>LibreOffice</strong> — Conversión de Word, Excel, PowerPoint a PDF</span></li>
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>ImageMagick</strong> — Optimización de imágenes line-art</span></li>
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Poppler</strong> — Conversión de PDF a HTML/Markdown</span></li>
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>Calibre</strong> — Conversión de PDF a EPUB</span></li>
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>WinRAR</strong> — Empaquetado en formato CBR</span></li>
+                    </ul>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+<code><span class="comment"># Instalación masiva con Chocolatey</span>
+choco install ghostscript qpdf tesseract libreoffice-fresh imagemagick poppler calibre winrar -y
+
+Write-Host "Paso 2 completado" -ForegroundColor Green</code>
+                    </div>
+                </div>
+
+                <!-- PASO 3 -->
+                <div class="step-card">
+                    <div class="step-card-header">
+                        <div class="step-num">3</div>
+                        <h2>Paquetes Python (pip)</h2>
+                    </div>
+                    <p>Estas librerías de Python extienden las capacidades de UltraPDF. Requieren que Python y Ghostscript ya estén instalados (Pasos 1 y 2).</p>
+                    <ul class="tool-list">
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>OCRmyPDF</strong> — OCR avanzado en archivos PDF existentes</span></li>
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>WeasyPrint</strong> — Conversión de HTML, URL y Markdown a PDF</span></li>
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span><strong>OpenCV</strong> — Separación y extracción de fotos en documentos escaneados</span></li>
+                    </ul>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+<code><span class="comment"># Actualizar pip e instalar librerías de Python</span>
+python -m pip install --upgrade pip
+python -m pip install ocrmypdf weasyprint opencv-python
+
+Write-Host "Paso 3 completado" -ForegroundColor Green</code>
+                    </div>
+                </div>
+
+                <!-- PASO 4 -->
+                <div class="step-card">
+                    <div class="step-card-header">
+                        <div class="step-num">4</div>
+                        <h2>Verificar en UltraPDF</h2>
+                    </div>
+                    <p>Una vez instaladas todas las dependencias:</p>
+                    <ul class="tool-list">
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span>Cierra la ventana de PowerShell</span></li>
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span>Abre la aplicación <strong>UltraPDF</strong></span></li>
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span>Ve a <strong>Ajustes → Dependencias del Sistema</strong></span></li>
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span>Pulsa <strong>"Comprobar de nuevo"</strong></span></li>
+                        <li><svg class="check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span>Las 13 dependencias aparecerán marcadas como <strong>Installed</strong></span></li>
+                    </ul>
+                    <div class="tip-box">
+                        <p><strong>¿Alguna dependencia no aparece?</strong> Asegúrate de que la herramienta esté en el PATH del sistema. En PowerShell puedes verificar con: <code>where.exe ghostscript</code> o <code>tesseract --version</code>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <img src="assets/images/logos/ultrapdf-logo.png" alt="UltraPDF" class="footer-logo">
+                <p class="footer-tagline">El alternativo gratuito a Adobe Acrobat.</p>
+                <p class="footer-license">MIT License · © 2026 UltraPDF</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Producto</h4>
+                    <a href="index.html#features">Características</a>
+                    <a href="index.html#all-tools">Herramientas</a>
+                    <a href="index.html#platforms">Plataformas</a>
+                    <a href="index.html#versions">Versiones</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Ayuda</h4>
+                    <a href="tutoriales.html" style="color: var(--accent);">Tutoriales</a>
+                    <a href="placeholder.html#api">API Docs</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="placeholder.html#license">MIT License</a>
+                    <a href="placeholder.html#privacy">Privacidad (local-first)</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+        var html = document.documentElement;
+
+        // Theme toggle
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var savedTheme = localStorage.getItem('ultrapdf-theme');
+        if (savedTheme) html.setAttribute('data-theme', savedTheme);
+        else if (prefersDark) html.setAttribute('data-theme', 'dark');
+        else html.setAttribute('data-theme', 'light');
+
+        var themeBtn = document.getElementById('theme-toggle');
+        if (themeBtn) themeBtn.addEventListener('click', function() {
+            var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('ultrapdf-theme', next);
+        });
+
+        // Navbar border on scroll
+        var navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 10) {
+                navbar.style.borderBottomColor = 'var(--border)';
+            } else {
+                navbar.style.borderBottomColor = 'transparent';
+            }
+        }, { passive: true });
+    })();
+
+    function copyCode(btn) {
+        var code = btn.parentElement.querySelector('code');
+        var text = code.textContent || code.innerText;
+        navigator.clipboard.writeText(text).then(function() {
+            btn.textContent = 'Copiado';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.textContent = 'Copiar';
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+    </script>
+</body>
+</html>

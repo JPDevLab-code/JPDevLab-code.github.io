@@ -1,76 +1,791 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UltraPDF - Descargar</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a0a;
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .container {
-            text-align: center;
-            max-width: 600px;
-            padding: 2rem;
-        }
-        .logo {
-            width: 128px;
-            height: 128px;
-            margin: 0 auto 2rem;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #4f8cff, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .version {
-            color: #888;
-            margin-bottom: 2rem;
-        }
-        .download-btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, #4f8cff, #a855f7);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(79, 140, 255, 0.3);
-        }
-        .size {
-            color: #666;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-    </style>
+    <title>UltraPDF — Edita, convierte y protege tus PDFs</title>
+    <meta name="description" content="Edit, convert, compress, sign and secure your PDFs with 55+ tools and AI-powered intelligence. Free, open source, and local-first.">
+    <meta property="og:title" content="UltraPDF — The free Adobe Acrobat alternative">
+    <meta property="og:description" content="Edit, convert, compress, sign and secure your PDFs. 55+ tools, AI-powered, local-first.">
+    <meta property="og:image" content="assets/images/hero/home-dark.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="assets/images/logos/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <svg class="logo" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-            <rect width="128" height="128" rx="24" fill="#1a1a2e"/>
-            <path d="M32 40h64v8H32zM32 56h64v8H32zM32 72h48v8H32z" fill="#4f8cff"/>
-            <path d="M80 68l20 20-20 20" fill="none" stroke="#a855f7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h1>UltraPDF</h1>
-        <p class="version">Versión 2.18.1</p>
-        <a href="https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases/download/v2.18.1/UltraPDF-Setup-2.18.1.exe" class="download-btn">
-            Descargar para Windows
-        </a>
-        <p class="size">~470 MB · Windows 10/11</p>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <img src="assets/images/logos/ultrapdf-icon-light.svg" alt="UltraPDF" class="nav-logo-img" id="nav-logo-img">
+                <span class="nav-brand">UltraPDF</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="#features" data-i18n="nav.features">Herramientas</a>
+                <a href="#all-tools" data-i18n="nav.tools">Todas las herramientas</a>
+                <a href="#features-showcase" data-i18n="nav.ai">Firmas y Móvil</a>
+                <a href="#platforms" data-i18n="nav.platforms">Plataformas</a>
+                <a href="tutoriales.html" data-i18n="nav.tutorials">Tutoriales</a>
+                <a href="https://github.com/JPDevLab-code/JPDevLab-code.github.io" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <div class="nav-actions">
+                <button class="lang-toggle" id="lang-toggle" title="Switch language">
+                    <span class="lang-label">EN</span>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases/download/v2.18.2/UltraPDF-Setup-2.18.2.exe" class="btn btn-primary btn-sm nav-cta" data-i18n="nav.download">Descargar</a>
+            </div>
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-mesh">
+            <div class="mesh-blob mesh-blob-1"></div>
+            <div class="mesh-blob mesh-blob-2"></div>
+            <div class="mesh-blob mesh-blob-3"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="eyebrow mono">// PDF PROCESSING · LOCAL-FIRST · 55+ TOOLS</div>
+            <h1 class="hero-title">
+                <span class="hero-title-thin" data-i18n="hero.title1">El todo en uno</span><br>
+                <span class="hero-title-bold" data-i18n="hero.title2">para tus documentos PDF</span>
+            </h1>
+            <div class="gradient-hairline"></div>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
+                Edita, convierte, comprime y protege tus PDFs con más de 55 herramientas e inteligencia artificial integrada. Todo en una aplicación de escritorio.
+            </p>
+            <div class="hero-ctas">
+                <a href="https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases/download/v2.18.2/UltraPDF-Setup-2.18.2.exe" class="btn btn-primary btn-lg">
+                    <span data-i18n="hero.download">Descargar v2.18.2</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </a>
+                <a href="https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases" target="_blank" class="btn btn-secondary btn-lg" data-i18n="hero.github">
+                    Ver en GitHub <span class="arrow">→</span>
+                </a>
+            </div>
+            <div class="hero-meta">
+                <span class="hero-meta-item">~410 MB</span>
+                <span class="hero-meta-dot">·</span>
+                <span class="hero-meta-item">Windows 10/11</span>
+                <span class="hero-meta-dot">·</span>
+                <a href="#versions" class="hero-meta-link" data-i18n="hero.versions">Ver todas las versiones</a>
+            </div>
+
+            <!-- Terminal block -->
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                    <span class="terminal-title">Terminal</span>
+                    <button class="copy-btn" id="docker-copy" title="Copy to clipboard">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        <span class="copy-label" data-i18n="terminal.copy">Copiar</span>
+                    </button>
+                </div>
+                <code class="terminal-code">$ docker run -p 8080:8080 <span class="terminal-highlight">ultrapdf/ultrapdf</span>:latest</code>
+            </div>
+
+            <!-- Hero screenshot -->
+            <div class="hero-screenshot">
+                <img src="assets/images/hero/home-light.png" alt="UltraPDF Light Mode" class="screenshot-light" id="screenshot-light">
+                <img src="assets/images/hero/home-dark.png" alt="UltraPDF Dark Mode" class="screenshot-dark" id="screenshot-dark">
+            </div>
+        </div>
+    </section>
+
+    <!-- STAT MARQUEE -->
+    <section class="stat-marquee">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="stat-item"><strong>10M+</strong> <span data-i18n="stats.downloads">descargas mundiales</span></span>
+                <span class="stat-sep">·</span>
+                <span class="stat-item"><strong>100%</strong> <span data-i18n="stats.opensource">Open Source</span></span>
+                <span class="stat-sep">·</span>
+                <span class="stat-item"><strong>55+</strong> <span data-i18n="stats.tools">herramientas PDF</span></span>
+                <span class="stat-sep">·</span>
+                <span class="stat-item"><strong>30+</strong> <span data-i18n="stats.formats">formatos de conversión</span></span>
+                <span class="stat-sep">·</span>
+                <span class="stat-item"><strong>AI</strong> <span data-i18n="stats.ai">integrada</span></span>
+                <span class="stat-sep">·</span>
+                <span class="stat-item"><strong>0</strong> <span data-i18n="stats.tracking">rastreadores</span></span>
+                <span class="stat-sep">·</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+                <span class="stat-item"><strong>10M+</strong> <span data-i18n="stats.downloads">descargas mundiales</span></span>
+                <span class="stat-sep">·</span>
+                <span class="stat-item"><strong>100%</strong> <span data-i18n="stats.opensource">Open Source</span></span>
+                <span class="stat-sep">·</span>
+                <span class="stat-item"><strong>55+</strong> <span data-i18n="stats.tools">herramientas PDF</span></span>
+                <span class="stat-sep">·</span>
+                <span class="stat-item"><strong>30+</strong> <span data-i18n="stats.formats">formatos de conversión</span></span>
+                <span class="stat-sep">·</span>
+                <span class="stat-item"><strong>AI</strong> <span data-i18n="stats.ai">integrada</span></span>
+                <span class="stat-sep">·</span>
+                <span class="stat-item"><strong>0</strong> <span data-i18n="stats.tracking">rastreadores</span></span>
+                <span class="stat-sep">·</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SWITCHBACK: 3 PILLARS -->
+    <section class="pillars" id="features">
+        <div class="container">
+            <!-- Pillar 1: Local-first -->
+            <div class="pillar-row">
+                <div class="pillar-text">
+                    <div class="eyebrow mono">// LOCAL-FIRST</div>
+                    <h2 class="pillar-title" data-i18n="pillars.local.title">Tus archivos, tu control.</h2>
+                    <p class="pillar-desc" data-i18n="pillars.local.desc">
+                        100% funcional sin conexión a internet. Tus documentos nunca salen de tu equipo. Sin rastreadores, sin analíticas, sin compromisos.
+                    </p>
+                    <ul class="pillar-checks">
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="pillars.local.check1">Funciona sin conexión a internet</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="pillars.local.check2">Archivos nunca salen de tu equipo</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="pillars.local.check3">Sin rastreadores ni analíticas</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="pillars.local.check4">Licencia MIT — gratuito para siempre</span></li>
+                    </ul>
+                </div>
+                <div class="pillar-visual">
+                    <img src="assets/images/screenshots/multi-select.png" alt="Local-first" class="pillar-img">
+                </div>
+            </div>
+
+            <!-- Pillar 2: 55+ Tools -->
+            <div class="pillar-row pillar-reverse">
+                <div class="pillar-text">
+                    <div class="eyebrow mono">// 55+ PDF TOOLS</div>
+                    <h2 class="pillar-title" data-i18n="pillars.tools.title">Todo lo que necesitas. Nada que no.</h2>
+                    <p class="pillar-desc" data-i18n="pillars.tools.desc">
+                        De comprimir a OCR, de firmar a convertir. Herramientas profesionales que empresas pagan cientos de dólares por año. Aquí son gratuitas.
+                    </p>
+                    <ul class="pillar-checks">
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="pillars.tools.check1">Comprimir, dividir, combinar, convertir</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="pillars.tools.check2">Firma digital y certificados</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="pillars.tools.check3">OCR multi-idioma con Tesseract</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="pillars.tools.check4">Flujos de trabajo automatizados</span></li>
+                    </ul>
+                </div>
+                <div class="pillar-visual">
+                    <img src="assets/images/screenshots/Todo lo que necesitas. Nada que no..png" alt="Todo lo que necesitas" class="pillar-img">
+                </div>
+            </div>
+
+            <!-- Pillar 3: Cloud Backup (Backblaze B2) -->
+            <div class="pillar-row">
+                <div class="pillar-text">
+                    <div class="eyebrow mono">// CLOUD BACKUP</div>
+                    <h2 class="pillar-title" data-i18n="pillars.cloud.title">Copias en la nube. Backblaze B2.</h2>
+                    <p class="pillar-desc" data-i18n="pillars.cloud.desc">
+                        Almacenamiento en la nube personal: copia de seguridad de tus documentos en tu propio bucket de Backblaze B2. El nivel gratuito incluye 10 GB — sin tarjeta de crédito.
+                    </p>
+                    <ul class="pillar-checks">
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="pillars.cloud.check1">Bucket propio en Backblaze B2</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="pillars.cloud.check2">Clic derecho → "Save to Backblaze B2"</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="pillars.cloud.check3">10 GB gratis sin tarjeta de crédito</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="pillars.cloud.check4">Explora, sube, descarga y elimina archivos</span></li>
+                    </ul>
+                </div>
+                <div class="pillar-visual">
+                    <img src="assets/images/screenshots/backblaze-config.png" alt="Backblaze B2 Cloud Backup" class="pillar-img pillar-img-fit">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE GRID -->
+    <section class="feature-grid" id="feature-grid">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow mono">// CORE TOOLS</div>
+                <h2 class="section-title" data-i18n="features.title">Herramientas esenciales para cada necesidad.</h2>
+            </div>
+            <div class="features">
+                <div class="feature-card feature-card-lg">
+                    <div class="feature-icon-lg"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="M9 15l3 3 3-3"/></svg></div>
+                    <div class="feature-info">
+                        <h3 data-i18n="features.compress">Comprimir</h3>
+                        <p data-i18n="features.compress.desc">Reduce el tamaño de tus PDFs manteniendo la calidad. Calidad ajustable, modo escala de grises y linealización web.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+                    <div class="feature-info">
+                        <h3 data-i18n="features.convert">Convertir</h3>
+                        <p data-i18n="features.convert.desc">Más de 30 formatos soportados. Word, Excel, PowerPoint, imágenes, HTML y más.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></div>
+                    <div class="feature-info">
+                        <h3 data-i18n="features.sign">Firmar</h3>
+                        <p data-i18n="features.sign.desc">Firma digital con certificados PEM/P12/PFX/JKS. Firma compartida multi-participante.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg></div>
+                    <div class="feature-info">
+                        <h3 data-i18n="features.merge">Unir</h3>
+                        <p data-i18n="features.merge.desc">Combina múltiples PDFs en un solo documento. Genera tabla de contenidos automáticamente.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/><circle cx="12" cy="12" r="3"/></svg></div>
+                    <div class="feature-info">
+                        <h3 data-i18n="features.ocr">OCR</h3>
+                        <p data-i18n="features.ocr.desc">Reconocimiento óptico de caracteres multi-idioma. Modo automático, forzado y estricto.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <div class="feature-info">
+                        <h3 data-i18n="features.security">Seguridad</h3>
+                        <p data-i18n="features.security.desc">Encriptación con contraseña. Permisos de impresión, copia y edición. Aplanar formularios.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="features-more">
+                <a href="#all-tools" class="btn btn-secondary" data-i18n="features.more">+ 49 herramientas más <span class="arrow">→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALL TOOLS -->
+    <section class="all-tools" id="all-tools">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow mono">// COMPLETE TOOLKIT</div>
+                <h2 class="section-title" data-i18n="alltools.title">Todas las herramientas.</h2>
+                <p class="section-desc" data-i18n="alltools.desc">55+ herramientas profesionales organizadas por categoría.</p>
+            </div>
+            <div class="tool-filters" id="tool-filters">
+                <button class="filter-pill active" data-filter="all" data-i18n="filter.all">Todos</button>
+                <button class="filter-pill" data-filter="recommended" data-i18n="filter.recommended">Recomendados</button>
+                <button class="filter-pill" data-filter="pages" data-i18n="filter.pages">Páginas</button>
+                <button class="filter-pill" data-filter="security" data-i18n="filter.security">Seguridad</button>
+                <button class="filter-pill" data-filter="format" data-i18n="filter.format">Formato</button>
+                <button class="filter-pill" data-filter="advanced" data-i18n="filter.advanced">Avanzado</button>
+                <button class="filter-pill" data-filter="dev" data-i18n="filter.dev">Desarrollador</button>
+            </div>
+            <div class="tools-grid" id="tools-grid">
+                <!-- Recommended -->
+                <div class="tool-card" data-categories="recommended">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="M9 15l3 3 3-3"/></svg></div>
+                    <h3>Compress</h3>
+                    <p data-i18n="tool.compress.desc">Reduce hasta 90% manteniendo calidad</p>
+                </div>
+                <div class="tool-card" data-categories="recommended">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18"/><path d="M3 12h18"/><path d="M7 7l10 10"/><path d="M17 7L7 17"/></svg></div>
+                    <h3>Multi-Tool</h3>
+                    <p data-i18n="tool.multi.desc">Merge, rotate, split en una sola vista</p>
+                </div>
+                <div class="tool-card" data-categories="recommended">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg></div>
+                    <h3>Merge</h3>
+                    <p data-i18n="tool.merge.desc">Combina PDFs con tabla de contenidos</p>
+                </div>
+                <div class="tool-card" data-categories="recommended">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="8" height="16" rx="1"/><rect x="14" y="4" width="8" height="16" rx="1"/><path d="M10 12h4"/></svg></div>
+                    <h3>Compare</h3>
+                    <p data-i18n="tool.compare.desc">Diferencias lado a lado con resaltado</p>
+                </div>
+                <div class="tool-card" data-categories="recommended">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+                    <h3>Convert</h3>
+                    <p data-i18n="tool.convert.desc">A Word, Excel, HTML, imágenes y 30+ formatos</p>
+                </div>
+                <div class="tool-card" data-categories="recommended">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/><circle cx="12" cy="12" r="3"/></svg></div>
+                    <h3>OCR</h3>
+                    <p data-i18n="tool.ocr.desc">Texto reconocible multi-idioma</p>
+                </div>
+                <div class="tool-card" data-categories="recommended">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></div>
+                    <h3>Sign</h3>
+                    <p data-i18n="tool.sign.desc">Firma digital legal multi-participante</p>
+                </div>
+                <div class="tool-card" data-categories="recommended">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <h3>Security</h3>
+                    <p data-i18n="tool.security.desc">Encriptar, permisos y aplanar formularios</p>
+                </div>
+
+                <!-- Pages -->
+                <div class="tool-card" data-categories="pages">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></div>
+                    <h3>Split</h3>
+                    <p data-i18n="tool.split.desc">Divide por páginas, capítulos o tamaño</p>
+                </div>
+                <div class="tool-card" data-categories="pages">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg></div>
+                    <h3>Rotate</h3>
+                    <p data-i18n="tool.rotate.desc">Gira páginas a cualquier ángulo</p>
+                </div>
+                <div class="tool-card" data-categories="pages">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2v4"/><path d="M18 2v4"/><path d="M6 18v4"/><path d="M18 18v4"/><rect x="6" y="6" width="12" height="12" rx="1"/></svg></div>
+                    <h3>Crop</h3>
+                    <p data-i18n="tool.crop.desc">Recorta páginas visualmente</p>
+                </div>
+                <div class="tool-card" data-categories="pages">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+                    <h3>Extract Pages</h3>
+                    <p data-i18n="tool.extract.desc">Extrae páginas específicas a nuevo PDF</p>
+                </div>
+                <div class="tool-card" data-categories="pages">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></svg></div>
+                    <h3>Reorganize</h3>
+                    <p data-i18n="tool.reorder.desc">Reordena, duplica o elimina páginas</p>
+                </div>
+                <div class="tool-card" data-categories="pages">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg></div>
+                    <h3>Remove Pages</h3>
+                    <p data-i18n="tool.remove.desc">Elimina páginas específicas</p>
+                </div>
+                <div class="tool-card" data-categories="pages">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/><path d="M2 12h20"/></svg></div>
+                    <h3>Page Numbers</h3>
+                    <p data-i18n="tool.pagenum.desc">Numeración configurable con Bates</p>
+                </div>
+                <div class="tool-card" data-categories="pages">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+                    <h3>Page Layout</h3>
+                    <p data-i18n="tool.layout.desc">Multi-up: 2, 4 o N páginas por hoja</p>
+                </div>
+                <div class="tool-card" data-categories="pages">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 3H3v7h18V3z"/><path d="M21 14H3v7h18v-7z"/></svg></div>
+                    <h3>Adjust Size</h3>
+                    <p data-i18n="tool.scale.desc">Ajusta tamaño y escala de páginas</p>
+                </div>
+                <div class="tool-card" data-categories="pages">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                    <h3>Booklet</h3>
+                    <p data-i18n="tool.booklet.desc">Impresión tipo booklet con orden correcto</p>
+                </div>
+
+                <!-- Security -->
+                <div class="tool-card" data-categories="security">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                    <h3>Add Password</h3>
+                    <p data-i18n="tool.password.desc">Encriptación 40/128/256-bit</p>
+                </div>
+                <div class="tool-card" data-categories="security">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg></div>
+                    <h3>Remove Password</h3>
+                    <p data-i18n="tool.removepw.desc">Elimina protección por contraseña</p>
+                </div>
+                <div class="tool-card" data-categories="security">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                    <h3>Certificate Sign</h3>
+                    <p data-i18n="tool.cert.desc">Firma con certificados PEM/P12/PFX</p>
+                </div>
+                <div class="tool-card" data-categories="security">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+                    <h3>Validate Signature</h3>
+                    <p data-i18n="tool.validate.desc">Verifica firmas digitales y certificados</p>
+                </div>
+                <div class="tool-card" data-categories="security">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="12" y1="7" x2="12" y2="15"/></svg></div>
+                    <h3>Sanitize</h3>
+                    <p data-i18n="tool.sanitize.desc">Elimina JS, archivos incrustados, metadatos</p>
+                </div>
+                <div class="tool-card" data-categories="security">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg></div>
+                    <h3>Flatten</h3>
+                    <p data-i18n="tool.flatten.desc">Hace el PDF no editable</p>
+                </div>
+                <div class="tool-card" data-categories="security">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
+                    <h3>Permissions</h3>
+                    <p data-i18n="tool.perms.desc">Controla imprimir, copiar, editar</p>
+                </div>
+                <div class="tool-card" data-categories="security">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg></div>
+                    <h3>Watermark</h3>
+                    <p data-i18n="tool.watermark.desc">Texto o imagen como marca de agua</p>
+                </div>
+                <div class="tool-card" data-categories="security">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+                    <h3>Stamp</h3>
+                    <p data-i18n="tool.stamp.desc">Sellos de texto o imagen con plantillas</p>
+                </div>
+                <div class="tool-card" data-categories="security">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                    <h3>Timestamp</h3>
+                    <p data-i18n="tool.timestamp.desc">Marca temporal RFC 3161</p>
+                </div>
+
+                <!-- Format -->
+                <div class="tool-card" data-categories="format">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h2"/><path d="M8 17h2"/><path d="M14 13h2"/><path d="M14 17h2"/></svg></div>
+                    <h3>Convert</h3>
+                    <p data-i18n="tool.convert.desc">A Word, Excel, HTML, imágenes y 30+ formatos</p>
+                </div>
+                <div class="tool-card" data-categories="format">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+                    <h3>OCR</h3>
+                    <p data-i18n="tool.ocr.desc">Texto reconocible multi-idioma</p>
+                </div>
+                <div class="tool-card" data-categories="format">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+                    <h3>Adjust Colors</h3>
+                    <p data-i18n="tool.colors.desc">Brillo, contraste, saturación</p>
+                </div>
+                <div class="tool-card" data-categories="format">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg></div>
+                    <h3>Replace Color</h3>
+                    <p data-i18n="tool.replacecolor.desc">Reemplaza o invierte colores</p>
+                </div>
+                <div class="tool-card" data-categories="format">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20"/><path d="M17 2v20"/><path d="M2 7h20"/><path d="M2 17h20"/></svg></div>
+                    <h3>Scanner Effect</h3>
+                    <p data-i18n="tool.scanner.desc">Simula efecto de escáner</p>
+                </div>
+
+                <!-- Advanced -->
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+                    <h3>Automate</h3>
+                    <p data-i18n="tool.automate.desc">Workflows multi-paso reutilizables</p>
+                </div>
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+                    <h3>Overlay</h3>
+                    <p data-i18n="tool.overlay.desc">Superpone un PDF sobre otro</p>
+                </div>
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+                    <h3>Repair</h3>
+                    <p data-i18n="tool.repair.desc">Repara PDFs corruptos o dañados</p>
+                </div>
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+                    <h3>Form Fill</h3>
+                    <p data-i18n="tool.formfill.desc">Editor visual de campos de formulario</p>
+                </div>
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+                    <h3>Read</h3>
+                    <p data-i18n="tool.read.desc">Lee y anota PDFs con highlights</p>
+                </div>
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+                    <h3>Annotate</h3>
+                    <p data-i18n="tool.annotate.desc">Highlights, dibujos, notas y formas</p>
+                </div>
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+                    <h3>Auto Rename</h3>
+                    <p data-i18n="tool.rename.desc">Detecta título y renombra automáticamente</p>
+                </div>
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                    <h3>Extract Images</h3>
+                    <p data-i18n="tool.images.desc">Extrae todas las imágenes a ZIP</p>
+                </div>
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                    <h3>Metadata</h3>
+                    <p data-i18n="tool.metadata.desc">Edita autor, título, fechas y campos</p>
+                </div>
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16"/><path d="M4 10h16"/><path d="M4 14h16"/><path d="M4 18h16"/></svg></div>
+                    <h3>Table of Contents</h3>
+                    <p data-i18n="tool.toc.desc">Edita bookmarks y outline del PDF</p>
+                </div>
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+                    <h3>Add Text</h3>
+                    <p data-i18n="tool.addtext.desc">Inserta texto en cualquier posición</p>
+                </div>
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                    <h3>Add Image</h3>
+                    <p data-i18n="tool.addimg.desc">Inserta PNG, JPG, SVG en el PDF</p>
+                </div>
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></div>
+                    <h3>Attachments</h3>
+                    <p data-i18n="tool.attach.desc">Archivos incrustados en el PDF</p>
+                </div>
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                    <h3>Show JavaScript</h3>
+                    <p data-i18n="tool.showjs.desc">Busca y muestra JavaScript oculto</p>
+                </div>
+                <div class="tool-card" data-categories="advanced">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+                    <h3>PDF Info</h3>
+                    <p data-i18n="tool.info.desc">Metadata completa, fuentes, cifrado</p>
+                </div>
+
+                <!-- Dev -->
+                <div class="tool-card" data-categories="dev">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+                    <h3>Air-gapped</h3>
+                    <p data-i18n="tool.airgap.desc">Despliegue sin conexión a internet</p>
+                </div>
+                <div class="tool-card" data-categories="dev">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                    <h3>API Docs</h3>
+                    <p data-i18n="tool.api.desc">Documentación REST completa con Swagger</p>
+                </div>
+                <div class="tool-card" data-categories="dev">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+                    <h3>Folder Scanning</h3>
+                    <p data-i18n="tool.folder.desc">Procesamiento automático de carpetas</p>
+                </div>
+                <div class="tool-card" data-categories="dev">
+                    <div class="tool-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                    <h3>SSO Guide</h3>
+                    <p data-i18n="tool.sso.desc">Configuración OAuth2 / SAML2</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow mono">// HOW IT WORKS</div>
+                <h2 class="section-title" data-i18n="how.title">Tres pasos. Listo.</h2>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-img-wrap">
+                        <img src="assets/images/screenshots/Sube tu PDF.jpg" alt="Sube tu PDF" loading="lazy">
+                    </div>
+                    <h3 class="step-title" data-i18n="how.step1.title">Sube tu PDF</h3>
+                    <p class="step-desc" data-i18n="how.step1.desc">Arrastra y suelta tu archivo, o selecciónalo desde tu explorador. También puedes escanear un código QR desde tu móvil.</p>
+                </div>
+                <div class="step-arrow">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-img-wrap">
+                        <img src="assets/images/screenshots/Elige tu herramienta.png" alt="Elige tu herramienta" loading="lazy">
+                    </div>
+                    <h3 class="step-title" data-i18n="how.step2.title">Elige tu herramienta</h3>
+                    <p class="step-desc" data-i18n="how.step2.desc">Más de 55 herramientas organizadas por categoría. Selecciona la que necesitas y configura los opciones.</p>
+                </div>
+                <div class="step-arrow">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-img-wrap">
+                        <img src="assets/images/screenshots/Descarga el resultado.png" alt="Descarga el resultado" loading="lazy">
+                    </div>
+                    <h3 class="step-title" data-i18n="how.step3.title">Descarga el resultado</h3>
+                    <p class="step-desc" data-i18n="how.step3.desc">Tu PDF procesado está listo. Descárgalo, guárdalo en la nube, o compártelo directamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGNATURE & MOBILE FEATURES -->
+    <section class="dual-features" id="features-showcase">
+        <div class="container">
+            <!-- Feature 1: Digital Signature -->
+            <div class="feature-showcase">
+                <div class="feature-showcase-text">
+                    <div class="eyebrow mono">// DIGITAL SIGNATURE</div>
+                    <h2 class="feature-showcase-title" data-i18n="showcase.sign.title">Firma digital.<br>Legalmente vinculante.</h2>
+                    <p class="feature-showcase-desc" data-i18n="showcase.sign.desc">
+                        Dibuja tu firma directamente en pantalla, súbela como imagen, o usa certificados digitales PEM/P12/PFX/JKS. Firma compartida multi-participante con seguimiento de estado.
+                    </p>
+                    <ul class="feature-showcase-checks">
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="showcase.sign.check1">Dibuja, escribe o sube tu firma</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="showcase.sign.check2">Certificados digitales enterprise</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="showcase.sign.check3">Firma compartida multi-participante</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="showcase.sign.check4">Verificación de firmas existentes</span></li>
+                    </ul>
+                </div>
+                <div class="feature-showcase-visual">
+                    <img src="assets/images/screenshots/draw-signature.png" alt="Digital Signature" class="feature-showcase-img" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Feature 2: Mobile QR Upload -->
+            <div class="feature-showcase feature-showcase-reverse">
+                <div class="feature-showcase-text">
+                    <div class="eyebrow mono">// MOBILE UPLOAD</div>
+                    <h2 class="feature-showcase-title" data-i18n="showcase.qr.title">Sube desde tu<br>móvil con un QR.</h2>
+                    <p class="feature-showcase-desc" data-i18n="showcase.qr.desc">
+                        Escanea el código QR con la cámara de tu teléfono y sube PDFs directamente desde tu dispositivo móvil. Sin cables, sin transferencias, sin complicaciones.
+                    </p>
+                    <ul class="feature-showcase-checks">
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="showcase.qr.check1">Escanea con cualquier cámara</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="showcase.qr.check2">Soporta iOS y Android</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="showcase.qr.check3">Detección de bordes automática</span></li>
+                        <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="showcase.qr.check4">Conexión directa, sin internet</span></li>
+                    </ul>
+                </div>
+                <div class="feature-showcase-visual">
+                    <img src="assets/images/screenshots/qr-upload.png" alt="Mobile QR Upload" class="feature-showcase-img" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPENDENCIES -->
+    <section class="dependencies" id="dependencies">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow mono">// POWERED BY</div>
+                <h2 class="section-title" data-i18n="deps.title">Construido sobre gigantes.</h2>
+                <p class="section-desc" data-i18n="deps.desc">UltraPDF utiliza las mejores bibliotecas open source del ecosistema.</p>
+            </div>
+            <div class="dep-grid">
+                <div class="dep-item"><img src="assets/images/logos/dependencies/logotipo-de-java-coffee-cup-.png" alt="Java" loading="lazy"><span>Java</span></div>
+                <div class="dep-item"><img src="assets/images/logos/dependencies/QPDF-Logo-2024Xb.png" alt="QPDF" loading="lazy"><span>QPDF</span></div>
+                <div class="dep-item"><img src="assets/images/logos/dependencies/LibreOffice_Calc-Logo.wine.svg" alt="LibreOffice" loading="lazy"><span>LibreOffice</span></div>
+                <div class="dep-item"><img src="assets/images/logos/dependencies/tesseractocr-logo.png" alt="Tesseract" loading="lazy"><span>Tesseract OCR</span></div>
+                <div class="dep-item"><img src="assets/images/logos/dependencies/Ghostscript.svg" alt="Ghostscript" loading="lazy"><span>Ghostscript</span></div>
+                <div class="dep-item"><img src="assets/images/logos/dependencies/OpenCV_logo_black_.webp" alt="OpenCV" loading="lazy"><span>OpenCV</span></div>
+                <div class="dep-item"><img src="assets/images/logos/dependencies/WeasyPrint .png" alt="WeasyPrint" loading="lazy"><span>WeasyPrint</span></div>
+                <div class="dep-item"><img src="assets/images/logos/dependencies/Calibre_logo.png" alt="Calibre" loading="lazy"><span>Calibre</span></div>
+                <div class="dep-item"><img src="assets/images/logos/dependencies/imagemagick.svg" alt="ImageMagick" loading="lazy"><span>ImageMagick</span></div>
+                <div class="dep-item"><img src="assets/images/logos/dependencies/pdftohtml (Poppler) logo.png" alt="Poppler" loading="lazy"><span>Poppler</span></div>
+                <div class="dep-item"><img src="assets/images/logos/dependencies/OCRmyPDF logo.svg" alt="OCRmyPDF" loading="lazy"><span>OCRmyPDF</span></div>
+                <div class="dep-item"><img src="assets/images/logos/dependencies/Python-logo-notext.svg.webp" alt="Python" loading="lazy"><span>Python</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLATFORMS -->
+    <section class="platforms" id="platforms">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow mono">// DEPLOY ANYWHERE</div>
+                <h2 class="section-title" data-i18n="platforms.title">Disponible en todas partes.</h2>
+                <p class="section-desc" data-i18n="platforms.desc">Descarga la aplicación de escritorio o ejecuta UltraPDF en tu navegador.</p>
+            </div>
+            <div class="platform-grid">
+                <a href="https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases/download/v2.18.2/UltraPDF-Setup-2.18.2.exe" class="platform-card" target="_blank">
+                    <div class="platform-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Windows</h3>
+                    <p class="platform-format">.exe · .msi</p>
+                    <span class="platform-version">v2.18.2</span>
+                </a>
+                <div class="platform-card platform-coming-soon">
+                    <div class="platform-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                    </div>
+                    <h3>macOS</h3>
+                    <p class="platform-format">.dmg</p>
+                    <span class="platform-badge" data-i18n="platforms.soon">Próximamente</span>
+                </div>
+                <a href="https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases" class="platform-card" target="_blank">
+                    <div class="platform-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M8 12h8M12 8v8"/></svg>
+                    </div>
+                    <h3>Docker</h3>
+                    <p class="platform-format">docker run</p>
+                    <span class="platform-badge">Linux</span>
+                </a>
+                <a href="index.html" class="platform-card">
+                    <div class="platform-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3 data-i18n="platforms.web">Web App</h3>
+                    <p class="platform-format" data-i18n="platforms.web.desc">ultrapdf.dev</p>
+                    <span class="platform-badge" data-i18n="platforms.open">Open Source</span>
+                </a>
+                <a href="https://github.com/JPDevLab-code/JPDevLab-code.github.io" class="platform-card" target="_blank">
+                    <div class="platform-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    </div>
+                    <h3 data-i18n="platforms.selfhost">Self-Host</h3>
+                    <p class="platform-format">Linux · macOS · Windows</p>
+                    <span class="platform-badge" data-i18n="platforms.open">Open Source</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- VERSIONS -->
+    <section class="versions" id="versions">
+        <div class="container">
+            <div class="section-header">
+                <div class="eyebrow mono">// RELEASES</div>
+                <h2 class="section-title" data-i18n="versions.title">Historial de versiones.</h2>
+            </div>
+            <div class="versions-list">
+                <div class="version-row">
+                    <div class="version-badge">v2.18.2</div>
+                    <div class="version-info">
+                        <strong data-i18n="versions.latest">Última versión</strong>
+                        <span class="version-date">2026-09-08</span>
+                        <span class="version-desc" data-i18n="versions.v2182">Corregido crash al iniciar — frontend embebido correctamente, ligado a loopback, installer reducido a 410 MB</span>
+                    </div>
+                    <a href="https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases/download/v2.18.2/UltraPDF-Setup-2.18.2.exe" class="btn btn-primary btn-sm" target="_blank" data-i18n="versions.download">Descargar</a>
+                </div>
+                <div class="version-row">
+                    <div class="version-badge">v2.18.1</div>
+                    <div class="version-info">
+                        <strong data-i18n="versions.rebrand">Rebranding completo</strong>
+                        <span class="version-date">2026-09-07</span>
+                        <span class="version-desc" data-i18n="versions.v2181">MSI corregido — JRE empaquetado correctamente, tamaño reducido a 494 MB</span>
+                    </div>
+                    <a href="https://github.com/JPDevLab-code/JPDevLab-code.github.io/releases/download/v2.18.1/UltraPDF-Setup-2.18.1.exe" class="btn btn-secondary btn-sm" target="_blank" data-i18n="versions.download">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <img src="assets/images/logos/ultrapdf-logo.png" alt="UltraPDF" class="footer-logo">
+                <p class="footer-tagline" data-i18n="footer.tagline">El alternativo gratuito a Adobe Acrobat.</p>
+                <p class="footer-license" data-i18n="footer.license">MIT License · © 2026 UltraPDF</p>
+                <p class="footer-credit">Creado por <a href="https://github.com/JPDevLab-code" target="_blank" rel="noopener">JPDevLab</a></p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4 data-i18n="footer.product">Producto</h4>
+                    <a href="#features" data-i18n="footer.features">Características</a>
+                    <a href="#all-tools" data-i18n="footer.alltools">Herramientas</a>
+                    <a href="#platforms" data-i18n="footer.platforms">Plataformas</a>
+                    <a href="#versions" data-i18n="footer.versions">Versiones</a>
+                    <a href="tutoriales.html">Tutoriales</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.community">Comunidad</h4>
+                    <a href="https://github.com/JPDevLab-code/JPDevLab-code.github.io" target="_blank">GitHub</a>
+                    <a href="placeholder.html#discord" target="_blank">Discord</a>
+                    <a href="placeholder.html#api" target="_blank" data-i18n="footer.docs">API Docs</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.legal">Legal</h4>
+                    <a href="placeholder.html#license" target="_blank">MIT License</a>
+                    <a href="placeholder.html#privacy" target="_blank" data-i18n="footer.privacy">Privacidad (local-first)</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="image-lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <img src="" alt="" id="lightbox-img">
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

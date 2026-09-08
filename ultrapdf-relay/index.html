@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>UltraPDF - Subir archivo</title>
+    <link rel="icon" href="../assets/images/logos/favicon.svg" type="image/svg+xml">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -25,11 +26,12 @@
             width: 64px;
             height: 64px;
             margin: 0 auto 1.5rem;
+            border-radius: 16px;
         }
         h1 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #4f8cff, #a855f7);
+            background: linear-gradient(135deg, #646cff, #a855f7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -46,7 +48,7 @@
             cursor: pointer;
         }
         .upload-area:hover, .upload-area.dragover {
-            border-color: #4f8cff;
+            border-color: #646cff;
         }
         .upload-icon {
             font-size: 3rem;
@@ -56,7 +58,7 @@
         .btn {
             display: inline-block;
             padding: 0.75rem 2rem;
-            background: linear-gradient(135deg, #4f8cff, #a855f7);
+            background: linear-gradient(135deg, #646cff, #a855f7);
             color: #fff;
             border: none;
             border-radius: 12px;
@@ -87,7 +89,7 @@
         }
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #4f8cff, #a855f7);
+            background: linear-gradient(90deg, #646cff, #a855f7);
             width: 0%;
             transition: width 0.3s;
         }
@@ -108,30 +110,7 @@
 </head>
 <body>
     <div class="container">
-        <svg class="logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#0a1628"/>
-                    <stop offset="100%" style="stop-color:#0d2847"/>
-                </linearGradient>
-                <linearGradient id="bolt" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#1e90ff"/>
-                    <stop offset="50%" style="stop-color:#00bfff"/>
-                    <stop offset="100%" style="stop-color:#00e5ff"/>
-                </linearGradient>
-                <filter id="glow">
-                    <feGaussianBlur stdDeviation="4" result="blur"/>
-                    <feMerge>
-                        <feMergeNode in="blur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                </filter>
-            </defs>
-            <rect width="200" height="200" rx="40" fill="url(#bg)"/>
-            <g filter="url(#glow)">
-                <path d="M120 30 L70 110 L95 110 L65 170 L140 85 L110 85 L140 30 Z" fill="url(#bolt)"/>
-            </g>
-        </svg>
+        <img src="../assets/images/logos/ultrapdf-icon-light.svg" alt="UltraPDF" class="logo">
         <h1>UltraPDF</h1>
         <p class="subtitle" id="status">Preparado para subir</p>
 
